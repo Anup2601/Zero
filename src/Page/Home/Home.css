@@ -1,0 +1,92 @@
+/* General styles for the container */
+.home-container {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    font-family: "Arial", sans-serif;
+    color: white;
+  }
+  
+  /* Left side: Image container */
+  .home-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .home-random-image {
+    max-width: 90%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Right side: Form container */
+  .home-form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: white;
+    color: #333;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form heading and text */
+  .home-form-container h1 {
+    color: #4e54c8;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+  }
+  
+  .home-form-container p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  /* Input field */
+  .home-input {
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 300px;
+    outline: none;
+    transition: all 0.3s;
+  }
+  
+  .home-input:focus {
+    border-color: #4e54c8;
+    box-shadow: 0px 0px 5px rgba(78, 84, 200, 0.5);
+  }
+  
+  /* Join button */
+  .home-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: not-allowed;
+    background-color: #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+  }
+  
+  .home-button.active {
+    background-color: #4e54c8;
+    cursor: pointer;
+  }
+  
+  .home-button.active:hover {
+    background-color: #373bbf;
+  }
+  
