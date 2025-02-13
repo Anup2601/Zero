@@ -1,11 +1,15 @@
-import React, { useRef, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useRef, useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
+import ReviewForm from "./review";
+import "./ReviewForm.css";
 
 const Room = () => {
   const { roomId } = useParams();
+  const navigate = useNavigate();
   const meetingContainerRef = useRef(null);
-  const isInitialized = useRef(false); // Prevent reinitialization
+  const isInitialized = useRef(false);
+  const [showReview, setShowReview] = useState(false); // State for review popup
 
   function randomID(len) {
     let result = '';
@@ -19,13 +23,13 @@ const Room = () => {
   }
 
   useEffect(() => {
-    if (isInitialized.current) return; // Prevent multiple calls
+    if (isInitialized.current) return;
     isInitialized.current = true;
 
     const initMeeting = async () => {
       const appID = 1944778439;
       const serverSecret = "d5c2462e917e1d78954c9e9c09a61a58";
-      const userID = randomID(5); // Keep the user ID random
+      const userID = randomID(5);
       const userName = " ";
 
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
@@ -50,15 +54,29 @@ const Room = () => {
           mode: ZegoUIKitPrebuilt.OneONoneCall,
         },
         showScreenSharingButton: true,
+        onLeaveRoom: () => {
+          setShowReview(true); // Show review form when user leaves the call
+        },
       });
     };
 
     initMeeting();
   }, [roomId]);
 
+  const handleReviewSubmit = (review) => {
+    console.log("Review Submitted:", review);
+    setShowReview(false);
+    navigate(`/room/${value}`); // Redirect to home page after submitting review
+  };
+
   return (
     <div>
       <div ref={meetingContainerRef} style={{ width: "100%", height: "100vh" }} />
+      {showReview && (
+        <div className="review-popup">
+          <ReviewForm onSubmit={handleReviewSubmit} onClose={() => navigate(`/room/${value}`)} />
+        </div>
+      )}
     </div>
   );
 };

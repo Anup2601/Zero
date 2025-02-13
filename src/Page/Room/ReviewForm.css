@@ -1,0 +1,145 @@
+/* ReviewForm container */
+.review-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  width: 90%;
+  }
+
+  /* .review-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 10px;
+} */
+
+  
+  /* Rating stars */
+  .star {
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .star-button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  /* Star hover effect */
+  .star:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Active star color */
+  .on {
+    color: gold;
+  }
+  
+  /* Inactive star color */
+  .off {
+    color: gray;
+  }
+  
+  /* Textarea for comments */
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  /* Buttons container */
+  .review-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+    
+  }
+  
+  /* Cancel button */
+  .review-buttons .cancel {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .review-buttons .cancel:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Submit button */
+  .review-buttons .submit {
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .review-buttons .submit:hover {
+    background-color: #0056b3;
+  }
+  
+  .review-buttons .submit:disabled {
+    background-color: #b0c4de;
+    cursor: not-allowed;
+  }
+  
+  /* Latest Review Popup */
+  .latest-review {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    border: 1px solid #ccc;
+  }
+  
+  .latest-review h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .latest-review .stars {
+    font-size: 1.5rem;
+    color: gold;
+  }
+  
+  .latest-review p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+  }
+  
+  .latest-review .timestamp {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 5px;
+  }
+  
