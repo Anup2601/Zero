@@ -27,8 +27,8 @@ const Room = () => {
     isInitialized.current = true;
 
     const initMeeting = async () => {
-      const appID = 1068273630;
-      const serverSecret = "8e70ccf91dd4fa703cd101d067773500";
+      const appID = 1152389388 ;
+      const serverSecret = "ad89973f8fd6f8384ac4b31b1d9a8c8f";
       const userID = randomID(5);
       const userName = " ";
 
